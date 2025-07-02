@@ -21,7 +21,7 @@ jobs:
       run: npm ci
 
     - name: Archive build
-      run:
+      run:  tar --exclude=app.tar.gz -czf app.tar.gz .
 
     - name: Upload to EC2
       uses: appleboy/scp-action@v1
