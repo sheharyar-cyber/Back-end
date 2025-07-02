@@ -21,7 +21,7 @@ jobs:
       run: npm ci
 
     - name: Archive build
-      run: tar -czf app.tar.gz ./
+      run:
 
     - name: Upload to EC2
       uses: appleboy/scp-action@v1
@@ -51,4 +51,4 @@ jobs:
           # Restart app using PM2
           pm2 start npm --name backend-app -- start || pm2 restart backend-app
           pm2 save
-          
+
